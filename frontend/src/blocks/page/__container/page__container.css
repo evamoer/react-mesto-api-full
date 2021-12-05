@@ -1,0 +1,20 @@
+.page__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 45px;
+  padding-bottom: 60px;
+}
+
+@media screen and (max-width: 880px) {
+  .page__container {
+    padding-top: 28px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .page__container {
+    padding-bottom: 36px;
+  }
+}

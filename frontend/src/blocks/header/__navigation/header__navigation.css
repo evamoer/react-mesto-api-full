@@ -1,0 +1,9 @@
+.header__navigation {
+  display: flex;
+}
+
+@media screen and (max-width: 880px) {
+  .header__navigation {
+    margin-right: 27px;
+  }
+}

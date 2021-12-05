@@ -1,0 +1,11 @@
+.header__link {
+  font-size: 18px;
+  font-family: inherit;
+  text-decoration: none;
+  color: #fff;
+  transition: opacity 0.2s linear;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+}
