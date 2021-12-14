@@ -1,7 +1,7 @@
-# Backend
+# Backend part
 /backend/*.log
 /backend/node_modules
-# Frontend
+# Frontend part
 /frontend/node_modules
 /frontend/build
 

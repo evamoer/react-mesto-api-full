@@ -1,0 +1,9 @@
+.card__like-number {
+  position: absolute;
+  top: 29px;
+  left: 11px;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  line-height: 1.23;
+  text-align: center;
+}

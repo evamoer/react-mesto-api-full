@@ -1,0 +1,30 @@
+.card__image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 282px;
+  max-height: 282px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.card__image-container::before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 700px) {
+  .card__image-container {
+    max-width: 325px;
+    max-height: 325px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card__image-container {
+    max-width: 387px;
+    max-height: 387px;
+  }
+}

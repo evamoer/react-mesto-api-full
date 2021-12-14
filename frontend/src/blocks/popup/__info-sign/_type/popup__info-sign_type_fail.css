@@ -1,0 +1,5 @@
+.popup__info-sign_type_fail {
+  background-image: url("../../../../images/sign-fail.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

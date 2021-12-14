@@ -1,0 +1,10 @@
+.gallery-table__item {
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 425px) {
+  .gallery-table__item {
+    margin: 0 auto;
+  }
+}

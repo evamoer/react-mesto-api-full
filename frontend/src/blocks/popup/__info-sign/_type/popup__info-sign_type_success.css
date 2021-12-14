@@ -1,0 +1,5 @@
+.popup__info-sign_type_success {
+  background-image: url("../../../../images/sign-success.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
