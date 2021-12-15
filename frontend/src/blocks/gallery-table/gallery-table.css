@@ -1,0 +1,26 @@
+.gallery-table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, calc((100% - 34px) / 3));
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 17px;
+  grid-row-gap: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .gallery-table {
+    grid-template-columns: repeat(2, calc((100% - 17px) / 2));
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .gallery-table {
+    margin: 0 auto;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}

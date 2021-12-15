@@ -1,0 +1,16 @@
+.sign__button {
+  width: 100%;
+  min-height: 50px;
+  border: none;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #000;
+
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.sign__button:hover {
+  opacity: 0.85;
+}

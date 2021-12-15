@@ -1,0 +1,9 @@
+.popup__full-image {
+  display: block;
+  margin-bottom: 10px;
+  width: auto;
+  max-width: 75vw;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+}
