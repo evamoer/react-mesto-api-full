@@ -1,8 +1,11 @@
-/* eslint-disable object-curly-newline */
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('dotenv').config();
+
+const { NODE_ENV, JWT_SECRET } = process.env;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const { SALT_ROUNDS, JWT_SECRET } = require('../config/index');
+const { SALT_ROUNDS } = require('../config/index');
 const NotFoundError = require('../errors/not-found-err');
 const BadRequestError = require('../errors/bad-request-err');
 const ConflictError = require('../errors/conflict-err');
@@ -65,7 +68,7 @@ const loginUser = (req, res, next) => {
   const { email, password } = req.body;
   User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, JWT_SECRET, { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret', { expiresIn: '7d' });
       return res.status(200).send({ token });
     })
     .catch(next);

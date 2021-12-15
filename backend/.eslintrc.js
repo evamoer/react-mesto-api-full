@@ -4,14 +4,13 @@ module.exports = {
     es2021: true,
   },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
+    ecmaFeatures: { jsx: true },
     ecmaVersion: 13,
     sourceType: 'module',
   },
   extends: ['airbnb-base'],
   rules: {
     'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    'object-curly-newline': ['error', { multiline: true }],
   },
 };

@@ -9,10 +9,10 @@ const { validateURL } = require('./helpers/validateURL');
 const errorsHandler = require('./middlewares/errors-handler');
 const NotFoundError = require('./errors/not-found-err');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost:27017/mestodb', {
-  useNewUrlParser: true,
-});
+mongoose.connect('mongodb://localhost:27017/mestodb', { useNewUrlParser: true });
 
 const app = express();
 app.use(cors());
