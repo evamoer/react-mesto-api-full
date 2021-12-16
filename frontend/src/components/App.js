@@ -94,7 +94,6 @@ const App = () => {
         if (data) {
           const { token } = data;
           localStorage.setItem("token", token);
-
           checkUserToken();
         }
       })
@@ -114,7 +113,9 @@ const App = () => {
   useEffect(() => {
     api
       .getCards(token)
-      .then((cardsData) => setCards(cardsData))
+      .then((cardsData) => {
+        setCards(cardsData.reverse());
+      })
       .catch((err) => console.log(`Ошибка: ${err}`));
   }, [token]);
 
@@ -155,7 +156,9 @@ const App = () => {
     api
       .addCard(inputValuesData, token)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        const updatedCards = [newCard, ...cards];
+        setCards(updatedCards);
+        console.log(updatedCards);
       })
       .then(() => closeAllPopups())
       .catch((err) => console.log(`Ошибка: ${err}`))
@@ -167,7 +170,9 @@ const App = () => {
   useEffect(() => {
     api
       .getUserData(token)
-      .then((user) => setCurrentUser(user))
+      .then((user) => {
+        setCurrentUser(user);
+      })
       .catch((err) => console.log(`Ошибка: ${err}`));
   }, [token]);
 

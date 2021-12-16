@@ -13,3 +13,8 @@
 - mesto-evamoer.nomoredomains.rocks
 - ip: 51.250.27.84
 - Ссылка: https://mesto-evamoer.nomoredomains.rocks/
+
+## Тестовый пользователь
+
+- почта: test@test.com
+- пароль: password
