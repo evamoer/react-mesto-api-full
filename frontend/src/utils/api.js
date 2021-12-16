@@ -1,4 +1,4 @@
-export const BASE_URL = "http://backend-mesto-evamoer.nomoredomains.rocks";
+export const BASE_URL = "https://backend-mesto-evamoer.nomoredomains.rocks";
 
 const checkResponse = (response) => {
   if (response.ok) {
