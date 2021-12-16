@@ -158,7 +158,6 @@ const App = () => {
       .then((newCard) => {
         const updatedCards = [newCard, ...cards];
         setCards(updatedCards);
-        console.log(updatedCards);
       })
       .then(() => closeAllPopups())
       .catch((err) => console.log(`Ошибка: ${err}`))
