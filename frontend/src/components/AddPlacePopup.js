@@ -16,7 +16,7 @@ export default function AddPlacePopup({
       resetForm();
       setValues({ name: "", link: "" });
     }
-  }, [isOpen]);
+  }, [isOpen, resetForm, setValues]);
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();

@@ -60,13 +60,8 @@ const App = () => {
       });
   };
 
-  //проверка при открытии сайта: залогинен ли текущий пользователь
-  useEffect(() => {
-    checkUserToken();
-  }, []);
-
   //проверка токена в localStorage: если да, то устанавливаем, что пользователь залогинен
-  const checkUserToken = () => {
+  const checkUserToken = useCallback(() => {
     const token = localStorage.getItem("token");
     if (token) {
       apiAuth
@@ -79,7 +74,12 @@ const App = () => {
         })
         .catch(handleError);
     }
-  };
+  }, [history]);
+
+  //проверка при открытии сайта: залогинен ли текущий пользователь
+  useEffect(() => {
+    checkUserToken();
+  }, [checkUserToken]);
 
   //обработка ошибок при выполнении запросов
   const handleError = (error) => {
@@ -116,7 +116,7 @@ const App = () => {
       .getCards(token)
       .then((cardsData) => setCards(cardsData))
       .catch((err) => console.log(`Ошибка: ${err}`));
-  }, []);
+  }, [token]);
 
   const handleCardLike = (likes, cardId) => {
     const isLiked = likes.some((user) => user === currentUser._id);
@@ -169,7 +169,7 @@ const App = () => {
       .getUserData(token)
       .then((user) => setCurrentUser(user))
       .catch((err) => console.log(`Ошибка: ${err}`));
-  }, []);
+  }, [token]);
 
   const handleUpdateUser = (inputValuesData) => {
     setIsLoading(true);
@@ -225,11 +225,11 @@ const App = () => {
   };
 
   //функция закрытия попапа по нажатию на Esc
-  const handleEscClick = useCallback((evt) => {
+  const handleEscClick = (evt) => {
     if (evt.key === "Escape") {
       closeAllPopups();
     }
-  }, []);
+  };
 
   //функция закрытия попапов
   const closeAllPopups = (evt) => {

@@ -9,16 +9,15 @@ export default function EditProfilePopup({
   onUpdateUser,
   submitButtonText,
 }) {
-  const { values, handleChange, errors, isValid, setValues, resetForm } =
+  const { values, handleChange, errors, isValid, setValues } =
     useFormAndValidation();
   const { name, about } = useContext(CurrentUserContext);
 
   useEffect(() => {
     if (isOpen) {
-      resetForm();
       setValues({ name, description: about });
     }
-  }, [isOpen]);
+  }, [isOpen, name, about, setValues]);
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();

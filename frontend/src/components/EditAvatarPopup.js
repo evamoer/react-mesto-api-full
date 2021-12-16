@@ -16,7 +16,7 @@ export default function EditAvatarPopup({
       resetForm();
       setValues({ avatar: "" });
     }
-  }, [isOpen]);
+  }, [isOpen, resetForm, setValues]);
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
